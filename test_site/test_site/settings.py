@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'django_filters',
+    'drf_spectacular',
     'apps.references',
     'apps.records',
 ]
@@ -83,6 +84,20 @@ DATABASES = {
     }
 }
 
+# Rest Framework 
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+# API Documentation
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'ДДС API',
+    'DESCRIPTION': 'CRUD операции',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
